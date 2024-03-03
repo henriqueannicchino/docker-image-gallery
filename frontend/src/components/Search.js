@@ -1,13 +1,13 @@
 import React from 'react';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 
-const Search = ({ word, setWord, handleSubmit }) => {
+export default function Search({ word = '', setWord, handleSubmit }) {
   return (
     <Container className="mt-4">
       <Row className="justify-content-center">
         <Col xs={12} md={8} lg={6}>
           <Form onSubmit={handleSubmit}>
-            <Form.Row>
+            <Row>
               <Col xs={9}>
                 <Form.Control
                   type="text"
@@ -21,12 +21,10 @@ const Search = ({ word, setWord, handleSubmit }) => {
                   Search
                 </Button>
               </Col>
-            </Form.Row>
+            </Row>
           </Form>
         </Col>
       </Row>
     </Container>
   );
-};
-
-export default Search;
+}
